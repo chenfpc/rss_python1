@@ -49,10 +49,11 @@ def runGression():
     reg.fit()
 
 
-def runKnnTest(alldata, alldistance, k):
+def runKnnSimulate(alldata, alldistance, alldata1, k):
     # 测试集划分
-    traindata, testdata, train_distance, test_distance = train_test_split(alldata, alldistance, train_size=0.8)
-    trainingSet_cordinary = np.column_stack((traindata, train_distance))
+    traindata, testdata, train_distance, test_distance = train_test_split(alldata1, alldistance, train_size=0.9)
+    # training set 就是包含3600个点所有数据。注意，training set 的distance 和 testing set 的distance是同一个文件
+    trainingSet_cordinary = np.column_stack((traindata, train_distance))  # 这里直接随机选区五分之一的数据点作为测试点，然后取knn = 7进行仿真。
     testingSet_cordinary = np.column_stack((testdata, test_distance))
     cordinaryTestSet = test_distance
 
@@ -68,7 +69,7 @@ def runKnnTest(alldata, alldistance, k):
     return predict_cordinary
 
 
-def runKnn(trainingSet, testingSet, cordinaryAllSet, cordinaryTestSet, k):
+def runKnnReality(trainingSet, testingSet, cordinaryAllSet, cordinaryTestSet, k):
     trainingSet_cordinary = np.column_stack((trainingSet, cordinaryAllSet))
 
     testingSet_cordinary = np.column_stack((testingSet, cordinaryTestSet))
@@ -94,63 +95,62 @@ def runKnn(trainingSet, testingSet, cordinaryAllSet, cordinaryTestSet, k):
     return predict_cordinary
 
 def runClassfication(trainingSet,cordinarySet):
-    # trainingSet1 = np.row_stack((trainingSet[0:63, :], trainingSet[126:217, :]))
-    # cordinarySet1 = np.row_stack((cordinarySet[0:63,:],cordinarySet[126:217,:]))
-    # trainingSet2 = trainingSet[63:126,:]
-    # cordinarySet2 = cordinarySet[63:126,:]
-    # trainingSet3 = trainingSet[217:298]
-    # cordinarySet3 = cordinarySet[217:298]
-    # trainingSet4 = trainingSet[298:355]
-    # cordinarySet4 = cordinarySet[298:355]
-    # trainingSet5 = trainingSet[355:467]
-    # cordinarySet5 = cordinarySet[355:467]
+    trainingSet1 = np.row_stack((trainingSet[0:63, :], trainingSet[126:217, :]))
+    cordinarySet1 = np.row_stack((cordinarySet[0:63, :], cordinarySet[126:217, :]))
+    trainingSet2 = trainingSet[63:126, :]
+    cordinarySet2 = cordinarySet[63:126, :]
+    trainingSet3 = trainingSet[217:298]
+    cordinarySet3 = cordinarySet[217:298]
+    trainingSet4 = trainingSet[298:355]
+    cordinarySet4 = cordinarySet[298:355]
+    trainingSet5 = trainingSet[355:467]
+    cordinarySet5 = cordinarySet[355:467]
+
+    data1 = runCluster(trainingSet1, cordinarySet1, 7)
+    data2 = runCluster(trainingSet2, cordinarySet2, 7)
+    data3 = runCluster(trainingSet3, cordinarySet3, 7)
+    data4 = runCluster(trainingSet4, cordinarySet4, 7)
+    data5 = runCluster(trainingSet5, cordinarySet5, 7)
+    return data1, data2, data3, data4, data5
+
+    # trainingSet = np.reshape(trainingSet,(60,60,12))
+    # cordinarySet = np.reshape(cordinarySet,(60,60,2))
+    # trainingSet1 = np.zeros((900,12))
+    # cordinarySet1= np.zeros((900,2))
+    # trainingSet2 = np.zeros((900,12))
+    # cordinarySet2= np.zeros((900,2))
+    # cordinarySet3 =np.zeros((900,2))
+    # trainingSet3 = np.zeros((900,12))
+    # trainingSet4 = np.zeros((900,12))
+    # cordinarySet4= np.zeros((900,2))
     #
-    # data1 = runCluster(trainingSet1,cordinarySet1)
-    # data2 = runCluster(trainingSet2,cordinarySet2)
-    # data3 = runCluster(trainingSet3,cordinarySet3)
-    # data4 = runCluster(trainingSet4,cordinarySet4)
-    # data5 = runCluster(trainingSet5,cordinarySet5)
-    # return data1,data2,data3,data4,data5
-
-
-    trainingSet = np.reshape(trainingSet,(60,60,12))
-    cordinarySet = np.reshape(cordinarySet,(60,60,2))
-    trainingSet1 = np.zeros((900,12))
-    cordinarySet1= np.zeros((900,2))
-    trainingSet2 = np.zeros((900,12))
-    cordinarySet2= np.zeros((900,2))
-    cordinarySet3 =np.zeros((900,2))
-    trainingSet3 = np.zeros((900,12))
-    trainingSet4 = np.zeros((900,12))
-    cordinarySet4= np.zeros((900,2))
-
-    index = 0
-    for i in range(30):
-        for j in range(30):
-            trainingSet1[index] = trainingSet[i,j,:]
-            cordinarySet1[index] = cordinarySet[i,j,:]
-            trainingSet2[index] = trainingSet[i,j+30,:]
-            cordinarySet2[index] = cordinarySet[i,j+30,:]
-            index = index + 1
-    index = 0
-    for i in range(30):
-        for j in range(30):
-            trainingSet4[index] = trainingSet[i + 30, j, :]
-            cordinarySet4[index] = cordinarySet[i + 30, j, :]
-            trainingSet3[index] = trainingSet[i + 30, j+30, :]
-            cordinarySet3[index] = cordinarySet[i + 30, j+30, :]
-            index = index + 1
-
-    print(len(trainingSet1),len(cordinarySet1))
-
-
-
-    data1 = runCluster(trainingSet1, cordinarySet1,80)
-    data2 = runCluster(trainingSet2, cordinarySet2,80)
-    data3 = runCluster(trainingSet3, cordinarySet3,80)
-    data4 = runCluster(trainingSet4, cordinarySet4,80)
-
-    return data1, data2, data3, data4
+    # index = 0
+    # for i in range(30):
+    #     for j in range(30):
+    #         trainingSet1[index] = trainingSet[i,j,:]
+    #         cordinarySet1[index] = cordinarySet[i,j,:]
+    #         trainingSet2[index] = trainingSet[i,j+30,:]
+    #         cordinarySet2[index] = cordinarySet[i,j+30,:]
+    #         index = index + 1
+    # index = 0
+    # for i in range(30):
+    #     for j in range(30):
+    #         trainingSet4[index] = trainingSet[i + 30, j, :]
+    #         cordinarySet4[index] = cordinarySet[i + 30, j, :]
+    #         trainingSet3[index] = trainingSet[i + 30, j+30, :]
+    #         cordinarySet3[index] = cordinarySet[i + 30, j+30, :]
+    #         index = index + 1
+    #
+    # print(len(trainingSet1),len(cordinarySet1))
+    #
+    #
+    #
+    # data1 = runCluster(trainingSet1, cordinarySet1,80)
+    # data2 = runCluster(trainingSet2, cordinarySet2,80)
+    # data3 = runCluster(trainingSet3, cordinarySet3,80)
+    # data4 = runCluster(trainingSet4, cordinarySet4,80)
+    #
+    # return data1, data2, data3, data4
 
 
 def runCluster(trainingSet,cordinarySet,clusters):
@@ -292,27 +292,27 @@ def judge(testPoint):
     wifi1 = testPoint[0]
     wifi2 = testPoint[4]
     wifi3 = testPoint[8]
-    if -19 >= wifi1 >= -57.65:
-        result = '0'
-    elif -23 >= wifi2 >= -61.65:
-        result = '1'
-    elif -17 >= wifi3 >= -55.65:
-        result = '2'
-    else:
-        result = '3'
+    # if -19 >= wifi1 >= -57.65:
+    #     result = '0'
+    # elif -23 >= wifi2 >= -61.65:
+    #     result = '1'
+    # elif -17 >= wifi3 >= -55.65:
+    #     result = '2'
+    # else:
+    #     result = '3'
 
-    # if -61 <= wifi1 <= -22:
-    #     if wifi3 <= -60:
-    #         result = "AC"
-    #     else:
-    #         result = "D"
-    # elif wifi1 <= -62:
-    #     if wifi3 <= -57:
-    #         result = "B"
-    #     elif wifi2 <= -56:
-    #         result = "F"
-    #     else:
-    #         result = "E"
+    if -61 <= wifi1 <= -22:
+        if wifi3 <= -60:
+            result = "AC"
+        else:
+            result = "D"
+    elif wifi1 <= -62:
+        if wifi3 <= -57:
+            result = "B"
+        elif wifi2 <= -56:
+            result = "F"
+        else:
+            result = "E"
 
 
     return result
@@ -339,26 +339,25 @@ def judgeCluster(source,source1, classfication):
     clusterResult = judge(source1)
     data = np.array([])
 
-    # if clusterResult == "AC":
-    #     data = classfication[0]
-    # if clusterResult == "B":
-    #     data = classfication[1]
-    # if clusterResult == "D":
-    #     data = classfication[2]
-    # if clusterResult == "E":
-    #     data = classfication[3]
-    # if clusterResult == "F":
-    #     data = classfication[4]
-
-
-    if clusterResult == "0":
+    if clusterResult == "AC":
         data = classfication[0]
-    if clusterResult == "1":
+    if clusterResult == "B":
         data = classfication[1]
-    if clusterResult == "2":
+    if clusterResult == "D":
         data = classfication[2]
-    if clusterResult == "3":
+    if clusterResult == "E":
         data = classfication[3]
+    if clusterResult == "F":
+        data = classfication[4]
+
+    # if clusterResult == "0":
+    #     data = classfication[0]
+    # if clusterResult == "1":
+    #     data = classfication[1]
+    # if clusterResult == "2":
+    #     data = classfication[2]
+    # if clusterResult == "3":
+    #     data = classfication[3]
 
 
 
@@ -390,7 +389,6 @@ def judgeCluster(source,source1, classfication):
 
 def calculateCordinary(k, data, point, index, positions_test):
     result = knn(point, data, k)
-
     print("knn得到的平均位置", result)  # 定位结果返回
     predic_position = result
     print("实际位置：", positions_test[index])
@@ -427,7 +425,7 @@ def knn(inX, dataset, k):
     length = len(dataset[0])
 
     """
-    
+    这个函数是用于weight取平均
       k_sum = 0
     weight = []
 

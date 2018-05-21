@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84fba5e1-c504-46ad-a428-df7f0b7b730d" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawTest" beforeDir="false" afterPath="$PROJECT_DIR$/DrawTest" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Matlab.py" beforeDir="false" afterPath="$PROJECT_DIR$/Matlab.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fucntion.py" beforeDir="false" afterPath="$PROJECT_DIR$/fucntion.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,7 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/rss_python$Matlab.coverage" NAME="Matlab Coverage Results" MODIFIED="1526517421814" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/rss_python$Matlab.coverage" NAME="Matlab Coverage Results" MODIFIED="1526905318277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/rss_python$calculateWAF.coverage" NAME="calculateWAF Coverage Results" MODIFIED="1525705396832" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/rss_python$draw_test.coverage" NAME="draw-test Coverage Results" MODIFIED="1525440533975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/location$test.coverage" NAME="test Coverage Results" MODIFIED="1523970162845" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -29,17 +30,8 @@
       <file leaf-file-name="fucntion.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/fucntion.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21">
-              <caret line="488" selection-start-line="488" selection-end-line="488" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="draw-test.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/draw-test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+            <state relative-caret-position="483">
+              <caret line="323" column="13" lean-forward="true" selection-start-line="323" selection-start-column="13" selection-end-line="323" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -47,20 +39,11 @@
       <file leaf-file-name="Matlab.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Matlab.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1260">
-              <caret line="67" column="25" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
+            <state relative-caret-position="1050">
+              <caret line="57" column="38" selection-start-line="57" selection-start-column="38" selection-end-line="57" selection-end-column="38" />
               <folding>
                 <element signature="e#34#68#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -84,6 +67,9 @@
       <find>distance.pdist</find>
       <find>np.tile</find>
       <find>result</find>
+      <find>judgeCluster</find>
+      <find>runClusterKnn</find>
+      <find>clusterKNN</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -92,16 +78,17 @@
         <option value="fpc" />
       </list>
     </option>
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/DrawTest" />
         <option value="$PROJECT_DIR$/Los" />
         <option value="$PROJECT_DIR$/draw-test.py" />
         <option value="$PROJECT_DIR$/calculateWAF.py" />
         <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/DrawTest" />
         <option value="$PROJECT_DIR$/Matlab.py" />
         <option value="$PROJECT_DIR$/fucntion.py" />
       </list>
@@ -117,9 +104,10 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="21" />
-    <option name="width" value="1440" />
-    <option name="height" value="799" />
+    <option name="x" value="793" />
+    <option name="y" value="41" />
+    <option name="width" value="785" />
+    <option name="height" value="715" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -127,15 +115,25 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="rss_python" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rss_python" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope" />
-      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.eslint.eslintPackage" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="last_opened_file_path" value="C:/Program Files/Git/bin/git.exe" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -455,6 +453,9 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="StructureViewFactory">
+    <option name="AUTOSCROLL_FROM_SOURCE" value="true" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -477,22 +478,23 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.48819444" side_tool="true" weight="0.29660022" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.51180553" weight="0.34530386" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.51180553" weight="0.22093023" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.3073323" visible="true" weight="0.115234375" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.31207597" visible="true" weight="0.11510417" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info active="true" anchor="right" id="SciView" order="3" visible="true" weight="0.083984375" />
-      <window_info id="Structure" order="1" sideWeight="0.6926677" side_tool="true" weight="0.115234375" />
+      <window_info active="true" anchor="right" id="SciView" order="3" visible="true" weight="0.033333335" />
+      <window_info id="Structure" order="1" sideWeight="0.687924" side_tool="true" weight="0.11510417" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.68680555" weight="0.31906077" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.68680555" weight="0.3181818" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -505,16 +507,16 @@
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.15625" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="right" id="Data View" order="5" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.15625" />
       <window_info id="Structure" order="1" visible="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.51180553" visible="true" weight="0.34615386" />
+      <window_info anchor="right" id="Data View" order="5" />
       <window_info anchor="bottom" id="Python Console" order="9" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="Database" order="3" />
@@ -544,7 +546,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/fucntion.py</url>
-          <line>148</line>
+          <line>149</line>
           <option name="timeStamp" value="107" />
         </line-breakpoint>
       </breakpoints>
@@ -559,7 +561,7 @@
           <properties />
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="108" />
+      <option name="time" value="110" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -569,8 +571,25 @@
         <watch expression="classfication[0][0][0]" />
         <watch expression="testData[i][:-2]" language="Python" />
         <watch expression="data[1]" language="Python" />
+        <watch expression="testingSet_cordinary[i]" language="Python" />
+        <watch expression="cordinaryTestSet[i]" language="Python" />
+        <watch expression="__py_debug_temp_var_206968693" />
       </configuration>
     </watches-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>cordinaryTestSet[i]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>testingSet_cordinary[i]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/DrawTest">
@@ -743,13 +762,6 @@
     </entry>
     <entry file="file:///anaconda3/lib/python3.6/codecs.py" />
     <entry file="file:///anaconda3/lib/python3.6/site-packages/numpy/core/fromnumeric.py" />
-    <entry file="file://$PROJECT_DIR$/DrawTest">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
@@ -759,13 +771,6 @@
     </entry>
     <entry file="file:///anaconda3/lib/python3.6/site-packages/sklearn/model_selection/_split.py" />
     <entry file="file:///anaconda3/lib/python3.6/site-packages/numpy/lib/shape_base.py" />
-    <entry file="file://$PROJECT_DIR$/calculateWAF.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="66" column="19" selection-start-line="66" selection-start-column="12" selection-end-line="66" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///anaconda3/lib/python3.6/site-packages/sklearn/preprocessing/data.py" />
     <entry file="file:///anaconda3/lib/python3.6/site-packages/sklearn/utils/validation.py" />
     <entry file="file:///anaconda3/lib/python3.6/site-packages/scipy/cluster/vq.py" />
@@ -776,10 +781,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/DrawTest">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="1" column="24" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calculateWAF.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="554">
+          <caret line="66" column="19" selection-start-line="66" selection-start-column="12" selection-end-line="66" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Matlab.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1260">
-          <caret line="67" column="25" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
+        <state relative-caret-position="1050">
+          <caret line="57" column="38" selection-start-line="57" selection-start-column="38" selection-end-line="57" selection-end-column="38" />
           <folding>
             <element signature="e#34#68#0" expanded="true" />
           </folding>
@@ -788,8 +807,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/fucntion.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="488" selection-start-line="488" selection-end-line="488" />
+        <state relative-caret-position="483">
+          <caret line="323" column="13" lean-forward="true" selection-start-line="323" selection-start-column="13" selection-end-line="323" selection-end-column="13" />
         </state>
       </provider>
     </entry>

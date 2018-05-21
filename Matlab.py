@@ -25,23 +25,24 @@ cordinaryTest = r'C:\Users\computer\Desktop\data\position_test.txt'
 
 
 # 数据准备
-# trainingSet = np.loadtxt(training2_4g)
-# testingSet = np.loadtxt(testing2_4g)
-# originalTestingSet = np.loadtxt(testing2_4g)
-# cordinaryAllSet = np.loadtxt(cordinaryAll)
-# cordinaryTestSet = np.loadtxt(cordinaryTest)
-# # k-means聚类
-# # 将原始数据做归一化处理
-# scaler = preprocessing.StandardScaler().fit(trainingSet)
-# trainingSet = scaler.transform(trainingSet)
-# testingSet = scaler.transform(testingSet)
-#x1,x2,y1,y2 = train_test_split(testingSet,cordinaryTestSet,test_size=0.3)
+trainingSet = np.loadtxt(training2_4g)
+testingSet = np.loadtxt(testing2_4g)
+originalTestingSet = np.loadtxt(testing2_4g)
+cordinaryAllSet = np.loadtxt(cordinaryAll)
+cordinaryTestSet = np.loadtxt(cordinaryTest)
+# k-means聚类
+# 将原始数据做归一化处理
+scaler = preprocessing.StandardScaler().fit(trainingSet)
+trainingSet = scaler.transform(trainingSet)
+testingSet = scaler.transform(testingSet)
+x1, x2, y1, y2 = train_test_split(testingSet, cordinaryTestSet, test_size=0.3)
 
-#classfication = f.runClassfication(trainingSet,cordinaryAllSet)
+classfication = f.runClassfication(trainingSet, cordinaryAllSet)
 
 #clusterKnn算法，默认cluster个数为4
-#f.runClusterKnn(trainingSet,testingSet[25:40],originalTestingSet[25:40],cordinaryAllSet,cordinaryTestSet[25:40],classfication)
-#f.runKnn(trainingSet,testingSet[26:35],cordinaryAllSet,cordinaryTestSet[26:35],3) #为什么一直5.7160042606
+f.runClusterKnn(trainingSet, testingSet[25:40], originalTestingSet[25:40], cordinaryAllSet, cordinaryTestSet[25:40],
+                classfication)
+# f.runClusterKnn(trainingSet,testingSet[26:35],cordinaryAllSet,cordinaryTestSet[26:35],3) #为什么一直5.7160042606
 #f.runGression()
 
 
@@ -65,7 +66,7 @@ alldistance1 = testdata["distance"]
 # 将原始数据做归一化处理
 scaler = preprocessing.StandardScaler().fit(alldata)
 alldata = scaler.transform(alldata)
-classfication = f.runClassfication(alldata, alldistance)
-for i in range(3):
-    f.runClusterKnnTest(alldata,alldistance,alldata1,scaler,classfication)
-#f.runKnnTest(alldata,alldistance,7)
+# classfication = f.runClassfication(alldata, alldistance)
+
+# f.runClusterKnnTest(alldata,alldistance,alldata1,scaler,classfication)
+#f.runKnnSimulate(alldata,alldistance,alldata1,7)
