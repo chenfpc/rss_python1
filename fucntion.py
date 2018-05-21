@@ -94,7 +94,8 @@ def runKnnReality(trainingSet, testingSet, cordinaryAllSet, cordinaryTestSet, k)
     print(result / len(testingSet))
     return predict_cordinary
 
-def runClassfication(trainingSet,cordinarySet):
+
+def runClassfication(trainingSet, cordinarySet):
     trainingSet1 = np.row_stack((trainingSet[0:63, :], trainingSet[126:217, :]))
     cordinarySet1 = np.row_stack((cordinarySet[0:63, :], cordinarySet[126:217, :]))
     trainingSet2 = trainingSet[63:126, :]
@@ -106,13 +107,25 @@ def runClassfication(trainingSet,cordinarySet):
     trainingSet5 = trainingSet[355:467]
     cordinarySet5 = cordinarySet[355:467]
 
-    data1 = runCluster(trainingSet1, cordinarySet1, 7)
-    data2 = runCluster(trainingSet2, cordinarySet2, 7)
-    data3 = runCluster(trainingSet3, cordinarySet3, 7)
-    data4 = runCluster(trainingSet4, cordinarySet4, 7)
-    data5 = runCluster(trainingSet5, cordinarySet5, 7)
-    return data1, data2, data3, data4, data5
+    datax1 = np.concatenate((trainingSet1, cordinarySet1), axis=1)
+    datax2 = np.concatenate((trainingSet2, cordinarySet2), axis=1)
+    datax3 = np.concatenate((trainingSet3, cordinarySet3), axis=1)
+    datax4 = np.concatenate((trainingSet4, cordinarySet4), axis=1)
+    datax5 = np.concatenate((trainingSet5, cordinarySet5), axis=1)
+    # data1 = runCluster(trainingSet1, cordinarySet1, 7)
+    # data2 = runCluster(trainingSet2, cordinarySet2, 7)
+    # data3 = runCluster(trainingSet3, cordinarySet3, 7)
+    # data4 = runCluster(trainingSet4, cordinarySet4, 7)
+    # data5 = runCluster(trainingSet5, cordinarySet5, 7)
+    # return data1, data2, data3, data4, data5
 
+    data1 = subArea(trainingSet1)
+    data2 = subArea(trainingSet2)
+    data3 = subArea(trainingSet3)
+    data4 = subArea(trainingSet4)
+    data5 = subArea(trainingSet5)
+
+    return (datax1, data1), (datax2, data2), (datax3, data3), (datax4, data4), (datax5, data5)
     # trainingSet = np.reshape(trainingSet,(60,60,12))
     # cordinarySet = np.reshape(cordinarySet,(60,60,2))
     # trainingSet1 = np.zeros((900,12))
@@ -153,7 +166,15 @@ def runClassfication(trainingSet,cordinarySet):
     # return data1, data2, data3, data4
 
 
-def runCluster(trainingSet,cordinarySet,clusters):
+def subArea(featureSet):
+    length = len(featureSet)
+    centroid = featureSet.sum(axis=0)
+    centroid = centroid / length
+
+    return centroid
+
+
+def runCluster(trainingSet, cordinarySet, clusters):
     """
     #trainingSet = np.row_stack((trainingSet[0:63,:],trainingSet[126:217,:]))
     print(len(trainingSet))
@@ -171,7 +192,6 @@ def runCluster(trainingSet,cordinarySet,clusters):
     plt.show()
     """
 
-
     trainingSet_cordinary = np.column_stack((trainingSet, cordinarySet))
     cluster = clusters
     centroid = kmeans(trainingSet, cluster)[0]
@@ -181,13 +201,13 @@ def runCluster(trainingSet,cordinarySet,clusters):
     for i in range(len(trainingSet)):
         dataTag[label[i]].append(trainingSet_cordinary[i])
 
-    return dataTag,centroid
+    return dataTag, centroid
 
-def runClusterKnn(trainingSet, testingSet,originalTestingSet,cordinaryAllSet, cordinaryTestSet,classfication):
+
+def runClusterKnn(trainingSet, testingSet, originalTestingSet, cordinaryAllSet, cordinaryTestSet, classfication):
     trainingSet_cordinary = np.column_stack((trainingSet, cordinaryAllSet))
 
     testingSet_cordinary = np.column_stack((testingSet, cordinaryTestSet))
-
 
     """
         #针对nlos
@@ -225,8 +245,7 @@ def runClusterKnn(trainingSet, testingSet,originalTestingSet,cordinaryAllSet, co
     # 有些时候我们可能不知道最终究竟聚成多少类,一个办法是用层次聚类的结果进行初始化.当然也可以直接输入某个数值.
     # k-means最后输出的结果其实是两维的,第一维是聚类中心,第二维是损失distortion,我们在这里只取第一维,所以最后有个[0]
 
-
-    result = clusterKNN(testingSet_cordinary,originalTestingSet, cordinaryTestSet, classfication)
+    result = clusterKNN(testingSet_cordinary, originalTestingSet, cordinaryTestSet, classfication)
     print("平均误差为")
     print(result[0])
     return result[1]
@@ -314,11 +333,10 @@ def judge(testPoint):
         else:
             result = "E"
 
-
     return result
 
 
-def clusterKNN(testData, originalTestSet,positions_test, classfication):
+def clusterKNN(testData, originalTestSet, positions_test, classfication):
     # testdata是含有position的
     index = 0
     error = 0
@@ -326,16 +344,18 @@ def clusterKNN(testData, originalTestSet,positions_test, classfication):
     # 新建一个predict_cordinary保存 每个点使用clusterknn算法生成的坐标
     predict_cordinary = [None] * len1
     for i in range(len1):
-        label = judgeCluster(testData[i][:-2],originalTestSet[i][:], classfication)
-        data = label[0]
-        clusterIndex = label[1]
-        result = calculateCordinary(3, data[clusterIndex], testData[i], i, positions_test)
+        label = judgeCluster(testData[i][:-2], originalTestSet[i][:], classfication)
+
+        # data = label[0]
+        # clusterIndex = label[1]
+        # result = calculateCordinary(3, data[clusterIndex], testData[i], i, positions_test)
+        result = calculateCordinary(3, label[0], testData[i], i, positions_test)
         error = error + result[0]
         predict_cordinary[i] = result[1]
     return error / len(positions_test), predict_cordinary
 
 
-def judgeCluster(source,source1, classfication):
+def judgeCluster(source, source1, classfication):
     clusterResult = judge(source1)
     data = np.array([])
 
@@ -359,22 +379,21 @@ def judgeCluster(source,source1, classfication):
     # if clusterResult == "3":
     #     data = classfication[3]
 
-
-
-    index = 0
-    temp = 100000
-    centroid = data[1]
-    # print(source1, centroid[0])
-    for i in range(len(centroid)):
-        sub = source - centroid[i]
-        # print("the sub is ", sub)
-        differ = sub ** 2
-        # print("DIFFER",differ)
-        result = differ.sum(axis=0)
-        if result < temp:
-            temp = result
-            index = i
-    return data[0],index
+    # index = 0
+    # temp = 100000
+    # centroid = data[1]
+    # # print(source1, centroid[0])
+    # for i in range(len(centroid)):
+    #     sub = source - centroid[i]
+    #     # print("the sub is ", sub)
+    #     differ = sub ** 2
+    #     # print("DIFFER",differ)
+    #     result = differ.sum(axis=0)
+    #     if result < temp:
+    #         temp = result
+    #         index = i
+    # return data[0], index
+    return data
 
 
 """
@@ -457,9 +476,8 @@ def knn(inX, dataset, k):
         return sumx / k, sumy / k
 
 
-def runClusterKnnTest(alldata, alldistance,alldata1,scaler,classfication):
-
-    #测试集划分
+def runClusterKnnTest(alldata, alldistance, alldata1, scaler, classfication):
+    # 测试集划分
     traindata, testdata, train_distance, test_distance = train_test_split(alldata1, alldistance, train_size=0.8)
     originalData = testdata
     testdata = scaler.transform(testdata)
@@ -467,7 +485,6 @@ def runClusterKnnTest(alldata, alldistance,alldata1,scaler,classfication):
     trainingSet_cordinary = np.column_stack((traindata, train_distance))
     testingSet_cordinary = np.column_stack((testdata, test_distance))
     cordinaryTestSet = test_distance
-
 
     # x = alldata1;
     # x = np.reshape(x,(60,60,12))
@@ -485,8 +502,7 @@ def runClusterKnnTest(alldata, alldistance,alldata1,scaler,classfication):
     # test1 = np.reshape(test1,(1,12))
     # print(test2.shape,test_distance1.shape)
 
-
-    runClusterKnn(alldata,testdata,originalData,alldistance,test_distance,classfication)
+    runClusterKnn(alldata, testdata, originalData, alldistance, test_distance, classfication)
     """
     #https://blog.csdn.net/u013719780/article/details/51755124
     meandistortions = []

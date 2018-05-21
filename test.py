@@ -35,3 +35,15 @@ print(x1[0])
 x = np.arange(64)
 b = np.reshape(x,(4,4,4),order='A')
 #print(b)
+
+def x():
+    return (4, 3), (2, 3)
+
+
+s = x();
+print(s[0][1])
+
+a = np.array([[1, 2, 1], [3, 4, 9]])
+b = np.array([[5, 6], [7, 8]])
+print(a.shape, b.shape)
+c = np.concatenate((a, b), axis=0)

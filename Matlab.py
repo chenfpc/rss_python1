@@ -40,7 +40,7 @@ x1, x2, y1, y2 = train_test_split(testingSet, cordinaryTestSet, test_size=0.3)
 classfication = f.runClassfication(trainingSet, cordinaryAllSet)
 
 #clusterKnn算法，默认cluster个数为4
-f.runClusterKnn(trainingSet, testingSet[25:40], originalTestingSet[25:40], cordinaryAllSet, cordinaryTestSet[25:40],
+f.runClusterKnn(trainingSet, testingSet, originalTestingSet, cordinaryAllSet, cordinaryTestSet,
                 classfication)
 # f.runClusterKnn(trainingSet,testingSet[26:35],cordinaryAllSet,cordinaryTestSet[26:35],3) #为什么一直5.7160042606
 #f.runGression()
