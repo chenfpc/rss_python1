@@ -41,19 +41,91 @@ cordinaryAll = r'/Users/computer/Desktop/data/position.txt'
 cordinaryTest = r'/Users/computer/Desktop/data/position_test.txt'
 
 
-def runGression():
-    predict_5g = runClusterKnn(training5g, testing5g, cordinaryAll, cordinaryTest, 4)
-    predict_2g = runClusterKnn(training2_4g, testing2_4g, cordinaryAll, cordinaryTest, 4)
-    # print(len(predict_2g),predict_2g[0],len(predict_5g),predict_5g[0])
+def getRgression(data2_4, data1_2_4, data2_2_4, distance, data5, data1_5, data2_5):
+    test1_2_4 = runKnnSimulate(data2_4, distance, data1_2_4[0:1800, :], distance[0:1800, :], 7, 4)
+    test2_2_4 = runKnnSimulate(data2_4, distance, data2_2_4[1800:, :], distance[1800:, :], 7, 4)
+    x1 = np.array(test1_2_4[0])  # predict 0-1800 2.4
+    x2 = np.array(test2_2_4[0])  # predict 1800-3600 2.4
+    y1 = np.array(test1_2_4[1])  # real 0-1800 2.4
+    y2 = np.array(test2_2_4[1])  # real 1800-3600 2.4
+
+    x_2 = np.concatenate((np.transpose(x1[:, 0]), np.transpose(x2[:, 0])), axis=0)  # predict x for 2.4
+    y_2 = np.concatenate((np.transpose(x1[:, 1]), np.transpose(x2[:, 1])), axis=0)  # predict y for 2.4
+
+    test1_5 = runKnnSimulate(data5, distance, data1_5[0:1800, :], distance[0:1800, :], 7, 4)
+    test2_5 = runKnnSimulate(data5, distance, data2_5[1800:, :], distance[1800:, :], 7, 4)
+
+    x1_5 = np.array(test1_5[0])
+    x2_5 = np.array(test2_5[0])
+    y1_5 = np.array(test1_5[1])
+    y2_5 = np.array(test2_5[1])
+
+    x_5 = np.concatenate((np.transpose(x1_5[:, 0]), np.transpose(x2_5[:, 0])), axis=0)
+    y_5 = np.concatenate((np.transpose(x1_5[:, 1]), np.transpose(x2_5[:, 1])), axis=0)
+
+    a = np.column_stack((x_2, x_5))  # 2.4g 和 5g 的 x (同一位置）
+    b = np.column_stack((y_2, y_5))  # 2.4g和5g的y(同一位置）
+    real_x = np.concatenate((np.transpose(y1[:, 0]), np.transpose(y2[:, 0])), axis=0)  # 真实位置的x
+    real_y = np.concatenate((np.transpose(y1[:, 1]), np.transpose(y2[:, 1])), axis=0)  # 真实位置的y
+    return a, b, real_x, real_y
+
+
+def runGression(data2_4, data1_2_4, data2_2_4, distance, data5, data1_5, data2_5, test_24G, test_5G):
+    a, b, x, y = getRgression(data2_4, data1_2_4, data2_2_4, distance, data5, data1_5, data2_5)
+
     reg = sk.linear_model.LinearRegression()
-    reg.fit()
+    reg.fit(a, x)
+    reg1 = sk.linear_model.LinearRegression()
+    reg1.fit(b, y)
+
+    test = runKnnSimulate(data2_4, distance, test_24G, distance, 7, 20)
+    test2 = runKnnSimulate(data5, distance, test_5G, distance, 7, 20)
+
+    dataOfTest = np.array(test[0])
+    dataOfTest1 = np.array(test2[0])
+
+    realDis = np.array(test[1])
+
+    xOf24g = np.array(dataOfTest[:, 0])
+    yOf24g = np.array(dataOfTest[:, 1])
+
+    xOf5g = np.array(dataOfTest1[:, 0])
+    yOf5g = np.array(dataOfTest1[:, 1])
+
+    x_x = np.column_stack((xOf24g, xOf5g))
+    y_y = np.column_stack((yOf24g, yOf5g))
+    x_predict = reg.predict(x_x)
+    y_predict = reg1.predict(y_y)
+
+    result = np.column_stack((x_predict, y_predict))
+
+    temp = result - realDis
+    temp = temp ** 2
+    temp = temp.sum(axis=1)
+    temp = temp ** 0.5
+    temp = temp.sum(axis=0)
+    print("回归之后的误差为：", temp / len(result))
 
 
-def runKnnSimulate(alldata, alldistance, alldata1, k):
+# index 代表是隔几个选一个
+
+def selectTestSet(alldata, alldistance, index):
+    testdata = []
+    test_distance = []
+    lenght = len(alldata)
+    for i in range(lenght):
+        if (i % index == 0):
+            test_distance.append(alldistance[i])
+            testdata.append(alldata[i])
+    return testdata, test_distance
+
+
+def runKnnSimulate(alldata, alldistance, alldata1, distance1, k, index):
     # 测试集划分
-    traindata, testdata, train_distance, test_distance = train_test_split(alldata1, alldistance, train_size=0.9)
+    # traindata, testdata, train_distance, test_distance = train_test_split(alldata1, distance1, train_size=0.9)
+    testdata, test_distance = selectTestSet(alldata1, distance1, index)
     # training set 就是包含3600个点所有数据。注意，training set 的distance 和 testing set 的distance是同一个文件
-    trainingSet_cordinary = np.column_stack((traindata, train_distance))  # 这里直接随机选区五分之一的数据点作为测试点，然后取knn = 7进行仿真。
+    trainingSet_cordinary = np.column_stack((alldata, alldistance))  # 这里直接随机选区五分之一的数据点作为测试点，然后取knn = 7进行仿真。
     testingSet_cordinary = np.column_stack((testdata, test_distance))
     cordinaryTestSet = test_distance
 
@@ -66,7 +138,7 @@ def runKnnSimulate(alldata, alldistance, alldata1, k):
         predict_cordinary[i] = knnResult[1]
     print("平均误差为")
     print(result / len(testdata))
-    return predict_cordinary
+    return predict_cordinary, test_distance
 
 
 def runKnnReality(trainingSet, testingSet, cordinaryAllSet, cordinaryTestSet, k):
@@ -408,12 +480,12 @@ def judgeCluster(source, source1, classfication):
 
 def calculateCordinary(k, data, point, index, positions_test):
     result = knn(point, data, k)
-    print("knn得到的平均位置", result)  # 定位结果返回
+    #print("knn得到的平均位置", result)  # 定位结果返回
     predic_position = result
-    print("实际位置：", positions_test[index])
+    #print("实际位置：", positions_test[index])
     result = (result - positions_test[index]) ** 2
     result = result.sum(axis=0) ** 0.5
-    print("误差为", result)
+    #print("误差为", result)
     return result, predic_position
 
 

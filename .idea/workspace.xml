@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="84fba5e1-c504-46ad-a428-df7f0b7b730d" name="Default" comment="对于仿真环境：直接使用knn算法，定位效果特别好，误差在1m之内。&#10;对于真实环境：未修改。还是先分为子区域。接着从子区域中进行cluster（kmans随机分组）。在进行knn.&#10;接下来，需要进行2.4g、5g两个信号仿真（仿真）；接着真实环境，直接使用子区域+knn（kmeans++)">
+    <list default="true" id="84fba5e1-c504-46ad-a428-df7f0b7b730d" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Matlab.py" beforeDir="false" afterPath="$PROJECT_DIR$/Matlab.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fucntion.py" beforeDir="false" afterPath="$PROJECT_DIR$/fucntion.py" afterDir="false" />
@@ -15,11 +15,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/rss_python$Matlab.coverage" NAME="Matlab Coverage Results" MODIFIED="1526913467914" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/rss_python$calculateWAF.coverage" NAME="calculateWAF Coverage Results" MODIFIED="1525705396832" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/rss_python$Matlab.coverage" NAME="Matlab Coverage Results" MODIFIED="1527056020800" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/rss_python$calculateWAF.coverage" NAME="calculateWAF Coverage Results" MODIFIED="1527041029669" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/rss_python$draw_test.coverage" NAME="draw-test Coverage Results" MODIFIED="1525440533975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/location$test.coverage" NAME="test Coverage Results" MODIFIED="1523970162845" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/rss_python$test.coverage" NAME="test Coverage Results" MODIFIED="1526913067810" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/rss_python$test.coverage" NAME="test Coverage Results" MODIFIED="1527011110110" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/location$Matlab.coverage" NAME="Matlab Coverage Results" MODIFIED="1524500481141" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -27,29 +27,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="fucntion.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="fucntion.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/fucntion.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1310">
-              <caret line="113" column="41" selection-start-line="113" selection-start-column="41" selection-end-line="113" selection-end-column="41" />
+            <state relative-caret-position="378">
+              <caret line="82" column="66" lean-forward="true" selection-start-line="82" selection-start-column="66" selection-end-line="82" selection-end-column="66" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="shape_base.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Anaconda3/Lib/site-packages/numpy/lib/shape_base.py">
+      <file leaf-file-name="base.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Anaconda3/Lib/site-packages/sklearn/linear_model/base.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="368" column="21" selection-start-line="368" selection-start-column="21" selection-end-line="368" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="multiarray.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.PyCharm2018.1/system/python_stubs/1770349564/numpy/core/multiarray.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-950">
-              <caret line="561" column="4" selection-start-line="561" selection-start-column="4" selection-end-line="561" selection-end-column="4" />
+            <state relative-caret-position="4893">
+              <caret line="255" selection-start-line="255" selection-end-line="255" />
             </state>
           </provider>
         </entry>
@@ -57,17 +48,17 @@
       <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="46" column="16" selection-start-line="46" selection-start-column="4" selection-end-line="46" selection-end-column="18" />
+            <state relative-caret-position="1050">
+              <caret line="50" column="10" selection-start-line="50" selection-start-column="10" selection-end-line="50" selection-end-column="10" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Matlab.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Matlab.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Matlab.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="58">
-              <caret line="31" column="44" lean-forward="true" selection-start-line="31" selection-start-column="44" selection-end-line="31" selection-end-column="44" />
+            <state relative-caret-position="924">
+              <caret line="51" column="49" selection-start-line="51" selection-start-column="49" selection-end-line="86" selection-end-column="32" />
               <folding>
                 <element signature="e#34#68#0" expanded="true" />
               </folding>
@@ -97,6 +88,8 @@
       <find>judgeCluster</find>
       <find>runClusterKnn</find>
       <find>clusterKNN</find>
+      <find>runknnsi</find>
+      <find>knn</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -119,8 +112,8 @@
         <option value="$PROJECT_DIR$/calculateWAF.py" />
         <option value="$PROJECT_DIR$/DrawTest" />
         <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/fucntion.py" />
         <option value="$PROJECT_DIR$/Matlab.py" />
+        <option value="$PROJECT_DIR$/fucntion.py" />
       </list>
     </option>
   </component>
@@ -134,10 +127,10 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="792" />
-    <option name="y" value="40" />
-    <option name="width" value="786" />
-    <option name="height" value="716" />
+    <option name="x" value="7" />
+    <option name="y" value="157" />
+    <option name="width" value="1184" />
+    <option name="height" value="1079" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -477,8 +470,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.Matlab" />
-        <item itemvalue="Python.test" />
         <item itemvalue="Python.calculateWAF" />
+        <item itemvalue="Python.test" />
         <item itemvalue="Python.draw-test" />
       </list>
     </recent_temporary>
@@ -511,27 +504,34 @@
       <option name="project" value="LOCAL" />
       <updated>1526905564563</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="这次主要是针对真实情况的代码进行改进：&#10;  查看了 classfication对实验结果的影响；&#10;  classfication只是简单针对四个方块进行判断，并且使用knn.但是效果不太好，还不如之前的3.4m">
+      <created>1526913866284</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1526913866284</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.16315378" side_tool="true" visible="true" weight="0.28960818" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.23958333" side_tool="true" weight="0.36438355" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49882904" weight="0.32879046" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.83684623" visible="true" weight="0.28960818" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7604167" weight="0.22410148" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.793765" visible="true" weight="0.114754096" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.76293105" visible="true" weight="0.04296875" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="right" id="SciView" order="3" visible="true" weight="0.032786883" />
-      <window_info id="Structure" order="1" sideWeight="0.206235" side_tool="true" visible="true" weight="0.114754096" />
+      <window_info anchor="right" id="SciView" order="3" weight="0.056640625" />
+      <window_info id="Structure" order="1" sideWeight="0.23706897" side_tool="true" weight="0.19921875" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.68540204" weight="0.44293016" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.68540204" weight="0.48211244" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -546,25 +546,25 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="right" id="Data View" order="5" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.15625" />
       <window_info id="Structure" order="1" visible="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.51180553" visible="true" weight="0.34615386" />
+      <window_info anchor="right" id="Data View" order="5" />
+      <window_info anchor="bottom" id="Python Console" order="9" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.15625" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.48819444" side_tool="true" weight="0.29660022" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="12" visible="true" weight="0.32840723" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="right" id="SciView" order="4" visible="true" weight="0.40364584" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.68680555" weight="0.364011" />
-      <window_info anchor="bottom" id="Python Console" order="9" />
+      <window_info id="Favorites" order="2" side_tool="true" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -586,7 +586,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="将空间分类，预先根据rss值分类" />
     <MESSAGE value="对于仿真环境：直接使用knn算法，定位效果特别好，误差在1m之内。&#10;对于真实环境：未修改。还是先分为子区域。接着从子区域中进行cluster（kmans随机分组）。在进行knn.&#10;接下来，需要进行2.4g、5g两个信号仿真（仿真）；接着真实环境，直接使用子区域+knn（kmeans++)" />
-    <option name="LAST_COMMIT_MESSAGE" value="对于仿真环境：直接使用knn算法，定位效果特别好，误差在1m之内。&#10;对于真实环境：未修改。还是先分为子区域。接着从子区域中进行cluster（kmans随机分组）。在进行knn.&#10;接下来，需要进行2.4g、5g两个信号仿真（仿真）；接着真实环境，直接使用子区域+knn（kmeans++)" />
+    <MESSAGE value="这次主要是针对真实情况的代码进行改进：&#10;  查看了 classfication对实验结果的影响；&#10;  classfication只是简单针对四个方块进行判断，并且使用knn.但是效果不太好，还不如之前的3.4m" />
+    <option name="LAST_COMMIT_MESSAGE" value="这次主要是针对真实情况的代码进行改进：&#10;  查看了 classfication对实验结果的影响；&#10;  classfication只是简单针对四个方块进行判断，并且使用knn.但是效果不太好，还不如之前的3.4m" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -602,7 +603,7 @@
           <properties />
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="115" />
+      <option name="time" value="140" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -615,11 +616,31 @@
         <watch expression="testingSet_cordinary[i]" language="Python" />
         <watch expression="cordinaryTestSet[i]" language="Python" />
         <watch expression="__py_debug_temp_var_206968693" />
+        <watch expression="x1_5[:,0]" language="Python" />
+        <watch expression="np.transpose(x1[:,0])" language="Python" />
+        <watch expression="test1_5[0]" />
+        <watch expression="real_y" />
+        <watch expression="len(result)" language="Python" />
       </configuration>
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
+      <expression>
+        <expression-string>len(result)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>np.transpose(x1[:,0])</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>x1_5[:,0]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>cordinaryTestSet[i]</expression-string>
         <language-id>Python</language-id>
@@ -633,40 +654,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Matlab.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-          <folding>
-            <element signature="e#34#68#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fucntion.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1566">
-          <caret line="91" column="59" selection-start-line="91" selection-start-column="59" selection-end-line="91" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Matlab.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="30" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
-          <folding>
-            <element signature="e#34#68#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fucntion.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1365">
-          <caret line="91" column="59" selection-start-line="91" selection-start-column="59" selection-end-line="91" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Matlab.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -812,6 +799,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2018.1/system/python_stubs/1770349564/numpy/core/multiarray.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11781">
+          <caret line="561" column="4" selection-start-line="561" selection-start-column="4" selection-end-line="561" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Anaconda3/Lib/site-packages/scipy/io/matlab/mio.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="140" selection-start-line="140" selection-end-line="140" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$USER_HOME$/Anaconda3/Lib/site-packages/numpy/lib/shape_base.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -819,34 +820,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2018.1/system/python_stubs/1770349564/numpy/core/multiarray.py">
+    <entry file="file://$USER_HOME$/Anaconda3/Lib/site-packages/sklearn/model_selection/_split.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-950">
-          <caret line="561" column="4" selection-start-line="561" selection-start-column="4" selection-end-line="561" selection-end-column="4" />
+        <state relative-caret-position="39900">
+          <caret line="1919" column="4" selection-start-line="1919" selection-start-column="4" selection-end-line="1919" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Anaconda3/Lib/site-packages/sklearn/utils/extmath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="779">
+          <caret line="139" selection-start-line="139" selection-end-line="139" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="46" column="16" selection-start-line="46" selection-start-column="4" selection-end-line="46" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fucntion.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1310">
-          <caret line="113" column="41" selection-start-line="113" selection-start-column="41" selection-end-line="113" selection-end-column="41" />
+        <state relative-caret-position="1050">
+          <caret line="50" column="10" selection-start-line="50" selection-start-column="10" selection-end-line="50" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Matlab.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="31" column="44" lean-forward="true" selection-start-line="31" selection-start-column="44" selection-end-line="31" selection-end-column="44" />
+        <state relative-caret-position="924">
+          <caret line="51" column="49" selection-start-line="51" selection-start-column="49" selection-end-line="86" selection-end-column="32" />
           <folding>
             <element signature="e#34#68#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Anaconda3/Lib/site-packages/sklearn/linear_model/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4893">
+          <caret line="255" selection-start-line="255" selection-end-line="255" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fucntion.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="82" column="66" lean-forward="true" selection-start-line="82" selection-start-column="66" selection-end-line="82" selection-end-column="66" />
         </state>
       </provider>
     </entry>

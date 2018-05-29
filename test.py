@@ -47,3 +47,6 @@ a = np.array([[1, 2, 1], [3, 4, 9]])
 b = np.array([[5, 6], [7, 8]])
 print(a.shape, b.shape)
 c = np.concatenate((a, b), axis=0)
+x = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+xxx = x[0:3:6]
+print(xxx)
